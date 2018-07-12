@@ -1,5 +1,5 @@
 node {
-    ansiColor('vga') {
+    ansiColor('gnome-terminal') {
         // Starting to work with Workspaces
         ws {
             // deleting workspace directory before starting
