@@ -1,5 +1,5 @@
 node {
-    ansiColor('xterm') {
+    ansiColor('vga') {
         // Starting to work with Workspaces
         ws {
             // deleting workspace directory before starting
