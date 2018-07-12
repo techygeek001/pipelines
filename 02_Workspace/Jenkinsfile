@@ -1,13 +1,15 @@
 node {
-    // Starting to work with Workspaces
-    ws {
-        // deleting workspace directory before starting
-        deleteDir()
-        stage('stg1') {
-            sh 'echo "This is stage 1"'
-        }
-        stage('stg2') {
-            sh 'echo "This is stage 2"'
+    ansiColor('xterm') {
+        // Starting to work with Workspaces
+        ws {
+            // deleting workspace directory before starting
+            deleteDir()
+            stage('stg1') {
+                sh 'echo "This is stage 1"'
+            }
+            stage('stg2') {
+                sh 'echo "This is stage 2"'
+            }
         }
     }
 }
