@@ -1,7 +1,5 @@
 node {
-    ## Starting to work with workspaces
     ws {
-        # clearing the workspace directory before starting
         deleteDir()
         stage('stg1') {
             sh 'echo "This is stage 1"'
