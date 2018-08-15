@@ -4,8 +4,12 @@ node {
             deleteDir()
             stage('print key') {
                 withCredentials([sshUserPrivateKey(credentialsId: 'gitlab_key', keyFileVariable: 'ssh_key', passphraseVariable: '', usernameVariable: '')]) {
-                    sh 'echo "$ssh_key"'
+                    echo($ssh_key)
                 }
+            }
+
+            stage('git clone') {
+                git credentialsId: 'gitlab_key', url: 'git@gitlab.com:technovate/technovate-terraform.git'
             }
         }
     }
