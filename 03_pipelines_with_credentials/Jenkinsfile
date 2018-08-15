@@ -1,0 +1,12 @@
+node {
+    ansiColor('gnome-terminal'){
+        ws {
+            deleteDir()
+            stage('print key') {
+                withCredentials([sshUserPrivateKey(credentialsId: 'gitlab_key', keyFileVariable: 'ssh_key', passphraseVariable: '', usernameVariable: '')]) {
+                    echo $ssh_key
+                }
+            }
+        }
+    }
+}
