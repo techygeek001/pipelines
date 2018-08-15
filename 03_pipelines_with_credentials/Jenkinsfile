@@ -1,5 +1,5 @@
 node {
-    ansiColor('gnome-terminal'){
+ //   ansiColor('gnome-terminal'){
         ws {
             deleteDir()
             stage('print key') {
@@ -11,7 +11,7 @@ node {
             stage('git clone') {
                 dir('technovate') {
                     git credentialsId: 'gitlab_key', url: 'git@gitlab.com:technovate/technovate-terraform.git'
-                    sh 'pwd; ls -ld'
+                    sh 'pwd; ls -ltr'
                 }
             }
 
@@ -22,5 +22,5 @@ node {
 
             }
         }
-    }
+//    }
 }
