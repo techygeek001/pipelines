@@ -7,14 +7,13 @@ node {
                     sh 'echo "$ssh_key"'
                 }
             }
-
             stage('git clone') {
                 dir('technovate') {
                     git credentialsId: 'gitlab_key', url: 'git@gitlab.com:technovate/technovate-terraform.git'
                     sh 'pwd; ls -ltr'
                 }
             }
-
+// Considering there is a config file in Jenkins "managed files" with id '575ced3f-cdd2-4a56-b6f2-e5039a079541'
             stage('config file') {
                 configFileProvider([configFile(fileId: '575ced3f-cdd2-4a56-b6f2-e5039a079541', variable: 'file_var')]) {
                     sh 'cat $file_var > config; cat config'
