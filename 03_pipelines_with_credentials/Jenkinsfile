@@ -9,7 +9,10 @@ node {
             }
 
             stage('git clone') {
-                git credentialsId: 'gitlab_key', url: 'git@gitlab.com:technovate/technovate-terraform.git'
+                dir(technovate) {
+                    git credentialsId: 'gitlab_key', url: 'git@gitlab.com:technovate/technovate-terraform.git'
+                    sh 'pwd; ls -ld'
+                }
             }
         }
     }
