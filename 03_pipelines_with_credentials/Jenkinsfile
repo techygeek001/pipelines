@@ -4,7 +4,7 @@ node {
             deleteDir()
             stage('print key') {
                 withCredentials([sshUserPrivateKey(credentialsId: 'gitlab_key', keyFileVariable: 'ssh_key', passphraseVariable: '', usernameVariable: '')]) {
-                    echo($ssh_key)
+                    sh 'echo "$ssh_key"'
                 }
             }
 
