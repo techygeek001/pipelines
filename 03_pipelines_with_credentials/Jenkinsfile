@@ -1,5 +1,5 @@
 node {
-    ansiColor('gnome-terminal'){
+//    ansiColor('gnome-terminal'){
         ws {
             deleteDir()
             stage('print key') {
@@ -21,5 +21,5 @@ node {
 
             }
         }
-    }
+//   }
 }
