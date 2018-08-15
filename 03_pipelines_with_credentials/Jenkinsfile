@@ -17,7 +17,7 @@ node {
 
             stage('config file') {
                 configFileProvider([configFile(fileId: '575ced3f-cdd2-4a56-b6f2-e5039a079541', variable: 'file_var')]) {
-                    sh 'echo $file_var'
+                    sh 'cat $file_var'
                 }
 
             }
